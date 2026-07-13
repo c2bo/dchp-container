@@ -2,10 +2,14 @@
 
 Run `git submodule update --remote` to update dependency
 
-Run container with this command:
+## Build a specific markdown file
+
+Pass a path to a mmark markdown file. Output (`.html` editor's copy and `.docx`)
+is written to the current directory:
 
 ```
-docker run --rm -v "$PWD:/work" ghcr.io/c2bo/dchp-container
+docker run --rm -v "$PWD:/work" ghcr.io/c2bo/dchp-container spec.md
 ```
 
-Expects to be in the root of the dchp repository, consumes `draft/digital-credentials-harmonized-presentation.md` and creates a `build/` folder.
+Add a target to build only one format: `spec.md html` or `spec.md docx`
+(default is both).

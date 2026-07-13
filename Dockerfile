@@ -25,6 +25,11 @@ RUN curl -fsSL -o /tmp/pandoc.deb \
 # xml2rfc (renders mmark's XML output to HTML)
 RUN pip install --no-cache-dir ${XML2RFC_SPEC}
 
+# Build tools from the dchp submodule (mmark->pandoc converter, ISO styles/
+# template) so the docx build works from any working directory without mounting
+# the whole repo. Override at runtime with TOOLS=... to use a different copy.
+COPY dchp/tools /opt/dchp/tools
+
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
