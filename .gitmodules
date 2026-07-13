@@ -1,0 +1,4 @@
+[submodule "dchp"]
+	path = dchp
+	url = https://github.com/openid/dchp
+	branch = main
