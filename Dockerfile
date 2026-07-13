@@ -4,7 +4,7 @@ ARG MMARK_VERSION=2.2.31
 ARG PANDOC_VERSION=3.8.3
 ARG XML2RFC_SPEC=xml2rfc
 
-ARG TARGETARCH=amd64
+ARG TARGETARCH
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends curl ca-certificates make \
